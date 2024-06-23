@@ -22,6 +22,7 @@ readme = "README.md"
 requires-python = ">=3.8"
 
 [project.entry-points.'dashai.plugins']
+imageClassificationTask = 'dashai_test_image_classification_package.image_classification_task:ImageClassificationTask'
 imageClassificationModel = 'dashai_test_image_classification_package.image_classification_model:ImageClassificationModel'
 mlp = 'dashai_test_image_classification_package.mlp_image_classifier:MLPImageClassifier'
 
