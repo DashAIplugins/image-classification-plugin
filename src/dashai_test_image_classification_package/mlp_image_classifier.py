@@ -5,9 +5,10 @@ import torch.optim as optim
 import torch.utils.data
 from DashAI.back.core.schema_fields import BaseSchema, int_field, schema_field
 from DashAI.back.models.base_model import BaseModel
-from dashai_image_classification_package import ImageClassificationModel
 from torch.utils.data import DataLoader
 from torchvision import transforms
+
+from dashai_test_image_classification_package import ImageClassificationModel
 
 
 class MLPImageClassifierSchema(BaseSchema):
