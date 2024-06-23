@@ -1,6 +1,6 @@
 [project]
 name = "dashai_test_image_classification_package"
-version = "0.0.2"
+version = "0.0.3"
 
 dependencies = [
     'torchvision == 0.14.0',
