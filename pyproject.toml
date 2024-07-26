@@ -1,10 +1,10 @@
 [project]
 name = "dashai_test_image_classification_plugin"
-version = "0.0.3"
+version = "0.0.4"
 
 dependencies = [
     'torchvision == 0.14.0',
-    'dashai_test_classification_metrics_package',
+    'dashai_test_classification_metrics_plugin',
 ]
 
 authors = [
@@ -19,7 +19,7 @@ keywords = [
     "Dataloader",
 ]
 
-description = "Image Classification Package for DashAI"
+description = "Image Classification Plugin for DashAI"
 readme = "README.md"
 requires-python = ">=3.8"
 
