@@ -16,7 +16,7 @@ from DashAI.back.dataloaders.classes.dataloader import (
     DatasetSplitsSchema,
 )
 from datasets import DatasetDict, load_dataset
-from starlette.datastructures import UploadFile
+from starlette.datastructures import Headers, UploadFile
 
 
 class ImageDataloaderSchema(BaseSchema):
@@ -40,7 +40,7 @@ class ImageDataloaderSchema(BaseSchema):
     more_options: DataloaderMoreOptionsSchema
 
 
-class ImageDataloader(BaseDataLoader):
+class ImageDataLoader(BaseDataLoader):
     """Data loader for data from image files."""
 
     COMPATIBLE_COMPONENTS = ["ImageClassificationTask"]
@@ -73,7 +73,14 @@ class ImageDataloader(BaseDataLoader):
         """
         if isinstance(filepath_or_buffer, str):
             dataset = load_dataset("imagefolder", data_dir=filepath_or_buffer)
+            # dataset = load_dataset("imagefolder", data_files=filepath_or_buffer)
         elif isinstance(filepath_or_buffer, UploadFile):
+            if filepath_or_buffer.content_type == "application/x-zip-compressed":
+                filepath_or_buffer = UploadFile(
+                    filename=filepath_or_buffer.filename,
+                    file=filepath_or_buffer.file,
+                    headers=Headers({"Content-Type": "application/zip"}),
+                )
             if filepath_or_buffer.content_type == "application/zip":
                 extracted_files_path = self.extract_files(temp_path, filepath_or_buffer)
                 dataset = load_dataset(

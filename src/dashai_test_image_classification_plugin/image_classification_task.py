@@ -1,8 +1,7 @@
 from typing import List
 
-from datasets import ClassLabel, DatasetDict, Image
-
 from DashAI.back.tasks.base_task import BaseTask
+from datasets import ClassLabel, DatasetDict, Image
 
 
 class ImageClassificationTask(BaseTask):
@@ -10,6 +9,15 @@ class ImageClassificationTask(BaseTask):
 
     Here you can change the methods provided by class Task.
     """
+
+    DESCRIPTION: str = """
+    Image classification in machine learning involves predicting the category or
+    class of an image from a predefined set of categories. Models are trained on
+    labeled images to learn patterns, features, and relationships within the
+    images, enabling accurate classification of new, unseen images. This process
+    often involves deep learning techniques, utilizing convolutional neural
+    networks (CNNs) to automatically extract and learn hierarchical features
+    from raw image data."""
 
     metadata: dict = {
         "inputs_types": [Image],
