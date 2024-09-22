@@ -1,6 +1,6 @@
 [project]
 name = "dashai_test_image_classification_plugin"
-version = "0.0.6"
+version = "0.0.7"
 
 dependencies = [
     'torchvision == 0.14.0',
@@ -25,8 +25,8 @@ requires-python = ">=3.8"
 
 [project.entry-points.'dashai.plugins']
 imageClassificationTask = 'dashai_test_image_classification_plugin.image_classification_task:ImageClassificationTask'
-imageClassificationModel = 'dashai_test_image_classification_plugin.image_classification_model:ImageClassificationModel'
-imageDataloader = 'dashai_test_image_classification_plugin.image_dataloader:ImageDataLoader'
+MLPClassifierModel = 'dashai_test_image_classification_plugin.mlp_image_classifier:MLPClassifierModel'
+imageDataloader = 'dashai_test_image_classification_plugin.image_dataloader:ImageDataloader'
 
 [project.urls]
 Homepage = "https://github.com/DashAISoftware/DashAI"

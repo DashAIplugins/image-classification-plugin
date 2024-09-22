@@ -3,12 +3,16 @@
 from typing import Any, Dict, Union
 
 from beartype import beartype
+<<<<<<< HEAD
 from DashAI.back.core.schema_fields import (
     bool_field,
     none_type,
     schema_field,
     string_field,
 )
+=======
+from DashAI.back.core.schema_fields import none_type, schema_field, string_field
+>>>>>>> ead0ee1 (updated version)
 from DashAI.back.core.schema_fields.base_schema import BaseSchema
 from DashAI.back.dataloaders.classes.dataloader import (
     BaseDataLoader,
@@ -28,6 +32,7 @@ class ImageDataloaderSchema(BaseSchema):
             "the name of the uploaded file will be used."
         ),
     )  # type: ignore
+<<<<<<< HEAD
     splits_in_folders: schema_field(
         bool_field(),
         False,
@@ -38,6 +43,10 @@ class ImageDataloaderSchema(BaseSchema):
     )  # type: ignore
     splits: DatasetSplitsSchema
     more_options: DataloaderMoreOptionsSchema
+=======
+    # splits: DatasetSplitsSchema
+    # more_options: DataloaderMoreOptionsSchema
+>>>>>>> ead0ee1 (updated version)
 
 
 class ImageDataLoader(BaseDataLoader):
@@ -72,8 +81,12 @@ class ImageDataLoader(BaseDataLoader):
             A HuggingFace's Dataset with the loaded data.
         """
         if isinstance(filepath_or_buffer, str):
+<<<<<<< HEAD
             dataset = load_dataset("imagefolder", data_dir=filepath_or_buffer)
             # dataset = load_dataset("imagefolder", data_files=filepath_or_buffer)
+=======
+            dataset = load_dataset("imagefolder", data_files=filepath_or_buffer)
+>>>>>>> ead0ee1 (updated version)
         elif isinstance(filepath_or_buffer, UploadFile):
             if filepath_or_buffer.content_type == "application/x-zip-compressed":
                 filepath_or_buffer = UploadFile(
