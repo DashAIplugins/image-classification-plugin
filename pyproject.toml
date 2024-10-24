@@ -25,7 +25,7 @@ requires-python = ">=3.8"
 
 [project.entry-points.'dashai.plugins']
 imageClassificationTask = 'dashai_test_image_classification_plugin.image_classification_task:ImageClassificationTask'
-MLPClassifierModel = 'dashai_test_image_classification_plugin.mlp_image_classifier:MLPClassifierModel'
+MLPImageClassifier = 'dashai_test_image_classification_plugin.mlp_image_classifier:MLPImageClassifier'
 imageDataloader = 'dashai_test_image_classification_plugin.image_dataloader:ImageDataloader'
 
 [project.urls]
